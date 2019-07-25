@@ -7,6 +7,10 @@ export class App extends Component {
   };
 
   render() {
-    return <h1>Placeholder Text</h1>;
+    return (
+      <div className="App">
+        <h1>Placeholder Text</h1>
+      </div>
+    );
   }
 }
