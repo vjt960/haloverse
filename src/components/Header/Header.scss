@@ -1,0 +1,28 @@
+@import '../../sass/mixins.scss';
+@import '../../sass/variables.scss';
+@import url(https://fonts.googleapis.com/css?family=Lato:300,400,700,900);
+@font-face { font-family: 'simple-line-icons'; src: url('chrome-extension://mihdfbecejheednfigjpdacgeilhlmnf/assets/fonts/Simple-Line-Icons.ttf') format('truetype'); }
+
+.header_main {
+  @include set-dimensions(10vh, 100%);
+  @include thin-border(red);
+  font-family: 
+  wf_heroic-condensed-pro_medium,
+  Calibri,"Arial Narrow","Trebuchet MS",
+  Tahoma,Arial,sans-serif;
+  font-weight: 600;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 1%;
+}
+
+.header_nav {
+  @include set-dimensions(auto, 30%);
+  @include remove-spacing;
+  @include thin-border(blue);
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
