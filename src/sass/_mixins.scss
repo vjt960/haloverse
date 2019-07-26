@@ -1,0 +1,20 @@
+@mixin set-dimensions($height, $width) {
+  height: $height;
+  width: $width;
+}
+
+@mixin push--auto {
+  margin: {
+    left: auto;
+    right: auto;
+  }
+}
+
+@mixin thin-border($color) {
+  border: 1px solid $color;
+}
+
+@mixin remove-spacing {
+  margin: 0;
+  padding: 0;
+}
