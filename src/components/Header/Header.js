@@ -4,7 +4,7 @@ import './Header.scss';
 
 export const Header = () => {
   return (
-    <Header>
+    <header className="header_main">
       <h1>Halo-verse Network</h1>
       <nav className="header_nav">
         <NavLink className="header_nav-link" exact to="/">
@@ -17,6 +17,8 @@ export const Header = () => {
           Halo Wars 2
         </NavLink>
       </nav>
-    </Header>
+    </header>
   );
 };
+
+export default Header;
