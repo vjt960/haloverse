@@ -5,16 +5,16 @@ import './Header.scss';
 export const Header = () => {
   return (
     <header className="header_main">
-      <h1>Halo-verse Network</h1>
+      <h1>HALOVERSE NETWORK</h1>
       <nav className="header_nav">
         <NavLink className="header_nav-link" exact to="/">
-          Home
+          HOME
         </NavLink>
         <NavLink className="header_nav-link" exact to="/halo_5">
-          Halo 5
+          HALO 5
         </NavLink>
         <NavLink className="header_nav-link" exact to="/halo_wars_2">
-          Halo Wars 2
+          HALO WARS 2
         </NavLink>
       </nav>
     </header>
