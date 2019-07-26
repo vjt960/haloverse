@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './App.scss';
 import { getMaps } from '../../utils/apiCalls';
+import Header from '../../components/Header/Header';
 
 export class App extends Component {
   componentDidMount = () => {
@@ -11,7 +12,7 @@ export class App extends Component {
   render() {
     return (
       <div className="App">
-        <h1>Placeholder Text</h1>
+        <Header />
       </div>
     );
   }
