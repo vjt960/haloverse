@@ -1,0 +1,12 @@
+@import '../../sass/mixins.scss';
+@import '../../sass/variables.scss';
+
+* {
+  box-sizing: border-box;
+  @include remove-spacing;
+}
+
+.App {
+  @include set-dimensions(100vh, 100%);
+  background-color: rgb(154, 190, 154);
+}
