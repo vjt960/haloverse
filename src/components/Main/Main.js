@@ -1,15 +1,25 @@
 import React from 'react';
-// import Showcase from '../../containers/Showcase/Showcase';
+import { connect } from 'react-redux';
+import { Showcase } from '../../containers/Showcase/Showcase';
 // import Form from '../../containers/Form/Form';
 // import Profile from '../../containers/Profile/Profile';
 
-export const Main = () => {
+export const Main = props => {
+  if (props.maps.length) {
+    console.log(props);
+  }
   return (
     <main>
-      <h1>Main Component</h1>
-      {/* <Showcase />
-      <Form />
-      <Profile /> */}
+      {props.maps.length && <Showcase maps={props.maps} />}
+      <h2>Footer</h2>
+      {/* <Form /> */}
+      {/* <Profile /> */}
     </main>
   );
 };
+
+const mapStateToProps = state => ({
+  maps: state.maps
+});
+
+export default connect(mapStateToProps)(Main);
