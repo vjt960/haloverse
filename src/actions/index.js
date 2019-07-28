@@ -15,3 +15,18 @@ export const storeUser = user => ({
   type: 'STORE_USER',
   user
 });
+
+export const storeSpartan = url => ({
+  type: 'STORE_SPARTAN',
+  url
+});
+
+export const storeEmblem = url => ({
+  type: 'STORE_EMBLEM',
+  url
+});
+
+export const storeStats = stats => ({
+  type: 'STORE_STATS',
+  stats
+});

@@ -4,6 +4,33 @@
 .form_gamertag-form {
   @include set-dimensions(20vh, 100%);
   @include thin-border(skyblue);
+ position: relative;
   display: flex;
   flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+input {
+  outline: none;
+}
+
+legend {
+  position: absolute;
+  top: 10%;
+}
+
+.form_input-container {
+  @include set-dimensions(35px, 320px)
+}
+
+.gamertag-input {
+  @include set-dimensions(95%, 250px);
+}
+
+.gamertag-submit {
+  @include set-dimensions(100%, 70px);
+    &:hover {
+      cursor: pointer;
+    }
 }

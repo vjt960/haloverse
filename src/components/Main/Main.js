@@ -2,7 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { Showcase } from '../../containers/Showcase/Showcase';
 import Form from '../../containers/Form/Form';
-// import Profile from '../../containers/Profile/Profile';
+import Profile from '../../containers/Profile/Profile';
 
 export const Main = props => {
   if (props.maps.length) {
@@ -12,13 +12,14 @@ export const Main = props => {
     <main>
       {props.maps.length && <Showcase maps={props.maps} />}
       <Form />
-      {/* <Profile /> */}
+      {props.stats && <Profile />}
     </main>
   );
 };
 
 const mapStateToProps = state => ({
-  maps: state.maps
+  maps: state.maps,
+  stats: state.stats
 });
 
 export default connect(mapStateToProps)(Main);

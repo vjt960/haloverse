@@ -1,0 +1,28 @@
+@import '../../sass/mixins.scss';
+@import '../../sass/variables.scss';
+
+.profile_container {
+  @include set-dimensions(auto, 100%);
+  display: flex;
+}
+
+.profile_spartan-img {
+  @include set-dimensions(370px, 270px);
+  @include thin-border(blue);
+  object-fit: cover;
+}
+
+.profile_service-card {
+  @include set-dimensions(370px, 100%);
+  @include thin-border(green);
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.profile_emblem-img {
+  @include set-dimensions(150px, 150px);
+  @include thin-border(red);
+  object-fit: cover;
+}
