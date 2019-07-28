@@ -4,10 +4,11 @@ import { Provider } from 'react-redux';
 import { createStore } from 'redux';
 import rootReducer from '../src/reducers';
 import { BrowserRouter } from 'react-router-dom';
-import { App } from './containers/App/App';
+import { composeWithDevTools } from 'redux-devtools-extension';
+import App from './containers/App/App';
 import * as serviceWorker from './serviceWorker';
 
-const store = createStore(rootReducer);
+const store = createStore(rootReducer, composeWithDevTools());
 
 const application = (
   <Provider store={store}>

@@ -1,8 +1,12 @@
 import { combineReducers } from 'redux';
+import { userReducer } from './userReducer';
 import { loadingReducer } from './loadingReducer';
+import { mapsReducer } from './mapsReducer';
 
 const rootReducer = combineReducers({
-  isLoading: loadingReducer
+  user: userReducer,
+  isLoading: loadingReducer,
+  maps: mapsReducer
 });
 
 export default rootReducer;

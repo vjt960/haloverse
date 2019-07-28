@@ -14,3 +14,13 @@ export const getMaps = async () => {
     throw Error(message);
   }
 };
+
+export const getSpartanImg = gamertag => {
+  const url = `https://www.haloapi.com/profile/h5/profiles/${gamertag}/spartan?size=512&crop=full`;
+  const cors_proxy = 'https://cors-anywhere.herokuapp.com/';
+  const options = { headers: { 'Ocp-Apim-Subscription-Key': apiKey } };
+
+  return fetch(cors_proxy + url, options)
+    .then(response => response.blob())
+    .then(blob => URL.createObjectURL(blob));
+};
