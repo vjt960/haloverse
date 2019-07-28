@@ -30,20 +30,22 @@ export class Form extends Component {
     return (
       <form className="form_gamertag-form">
         <legend>SEARCH HALO LEGACY</legend>
-        <input
-          type="text"
-          name="gamertag"
-          placeholder="Enter Xbox Gamertag"
-          value={this.state.gamertag}
-          onChange={event => this.handleChange(event)}
-          className="gamertag-input"
-        />
-        <input
-          type="submit"
-          value="SUBMIT"
-          onClick={event => this.handleSubmit(event)}
-          className="gamertag-submit"
-        />
+        <div className="form_input-container">
+          <input
+            type="text"
+            name="gamertag"
+            placeholder="Enter Xbox Gamertag"
+            value={this.state.gamertag}
+            onChange={event => this.handleChange(event)}
+            className="gamertag-input"
+          />
+          <button
+            onClick={event => this.handleSubmit(event)}
+            className="gamertag-submit"
+          >
+            SUBMIT
+          </button>
+        </div>
       </form>
     );
   }
