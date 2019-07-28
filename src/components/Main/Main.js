@@ -12,13 +12,14 @@ export const Main = props => {
     <main>
       {props.maps.length && <Showcase maps={props.maps} />}
       <Form />
-      <Profile />
+      {props.stats && <Profile />}
     </main>
   );
 };
 
 const mapStateToProps = state => ({
-  maps: state.maps
+  maps: state.maps,
+  stats: state.stats
 });
 
 export default connect(mapStateToProps)(Main);
