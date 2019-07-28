@@ -47,3 +47,17 @@ export const getEmblem = async gamertag => {
   }
 };
 
+export const getStats = async gamertag => {
+  const url = `https://www.haloapi.com/stats/h5/servicerecords/arena?players=${gamertag}`;
+  const options = { headers: { 'Ocp-Apim-Subscription-Key': apiKey } };
+  try {
+    const response = await fetch(url, options);
+    if (!response.ok) {
+      throw new Error(`Failed to retrieve ${gamertag}'s Service Record`);
+    }
+    const data = response.json();
+    return data;
+  } catch ({ message }) {
+    throw Error(message);
+  }
+};
