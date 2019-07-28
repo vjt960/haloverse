@@ -17,6 +17,6 @@ html {
 
 .App {
   @include set-dimensions(auto, 100%);
-  background-image: linear-gradient( hsla(0, 0, 0, 0.80), hsla(0, 0, 0, 0.80) ), url('../../images/hex-dark.png');
+  background-image: linear-gradient( hsla(0, 0, 0, 0.15), hsla(0, 0, 0, 0.15) ), url('../../images/hex-dark.png');
   background-repeat: repeat repeat;
 }
