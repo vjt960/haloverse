@@ -1,6 +1,13 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { storeUser } from '../../actions';
+import {
+  storeUser,
+  storeSpartan,
+  storeEmblem,
+  storeStats
+} from '../../actions';
+import { getSpartanImg, getEmblem, getStats } from '../../utils/apiCalls';
+import { formatStats } from '../../utils/cleaner';
 import './Form.scss';
 
 export class Form extends Component {
@@ -11,20 +18,31 @@ export class Form extends Component {
     };
   }
 
-  handleChange(event) {
+  handleChange = event => {
     event.preventDefault();
     this.setState({ [event.target.name]: event.target.value });
-  }
+  };
 
-  handleSubmit(event) {
+  handleSubmit = event => {
     event.preventDefault(event);
     this.props.storeUser(this.state.gamertag);
+    this.loadProfile(this.state.gamertag);
     this.clearInput();
-  }
+  };
 
-  clearInput() {
+  loadProfile = async gamertag => {
+    const { storeSpartan, storeEmblem, storeStats } = this.props;
+    const spartanURL = await getSpartanImg(gamertag);
+    const emblemURL = await getEmblem(gamertag);
+    const stats = await getStats(gamertag);
+    storeSpartan(spartanURL);
+    storeEmblem(emblemURL);
+    storeStats(formatStats(stats));
+  };
+
+  clearInput = () => {
     this.setState({ gamertag: '' });
-  }
+  };
 
   render() {
     return (
@@ -52,7 +70,10 @@ export class Form extends Component {
 }
 
 const mapDispatchToProps = dispatch => ({
-  storeUser: gamertag => dispatch(storeUser(gamertag))
+  storeUser: gamertag => dispatch(storeUser(gamertag)),
+  storeSpartan: url => dispatch(storeSpartan(url)),
+  storeEmblem: url => dispatch(storeEmblem(url)),
+  storeStats: stats => dispatch(storeStats(stats))
 });
 
 export default connect(
