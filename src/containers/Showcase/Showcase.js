@@ -14,31 +14,31 @@ export class Showcase extends Component {
 
   componentDidMount() {
     this.setState({
-      // index: Math.floor(Math.random() * Math.floor(this.props.maps.length)),
       mapName: this.props.maps[this.state.index].name,
       mapURL: this.props.maps[this.state.index].imageUrl,
       description: this.props.maps[this.state.index].description
     });
   }
+
   render() {
     return (
-      <section className="main_showcase">
-        <div
-          style={{
-            border: '1px solid magenta',
-            height: '70vh',
-            width: '100%',
-            backgroundImage: 'url(' + this.state.mapURL + ')',
-            backgroundSize: 'cover',
-            backgroundPosition: '50% 50%',
-            backgroundRepeat: 'no-repeat',
-            objectFit: 'cover'
-          }}
-        >
-          <h2>{this.state.mapName}</h2>
-          <p>{this.state.description}</p>
-        </div>
-        <p>Example Showcase Text</p>
+      <section
+        className="main_showcase"
+        style={{
+          border: '1px solid magenta',
+          height: '70vh',
+          width: '100%',
+          backgroundImage: 'url(' + this.state.mapURL + ')',
+          backgroundSize: 'cover',
+          backgroundPosition: '50% 50%',
+          backgroundRepeat: 'no-repeat',
+          objectFit: 'cover'
+        }}
+      >
+        <p className="main_showcase--map-title">{this.state.mapName}</p>
+        <p className="main_showcase--map-description">
+          {this.state.description}
+        </p>
       </section>
     );
   }
