@@ -10,3 +10,8 @@ export const storeMaps = maps => ({
   type: 'STORE_MAPS',
   maps
 });
+
+export const storeUser = user => ({
+  type: 'STORE_USER',
+  user
+});
