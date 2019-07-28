@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { Showcase } from '../../containers/Showcase/Showcase';
-// import Form from '../../containers/Form/Form';
+import Form from '../../containers/Form/Form';
 // import Profile from '../../containers/Profile/Profile';
 
 export const Main = props => {
@@ -11,8 +11,7 @@ export const Main = props => {
   return (
     <main>
       {props.maps.length && <Showcase maps={props.maps} />}
-      <h2>Footer</h2>
-      {/* <Form /> */}
+      <Form />
       {/* <Profile /> */}
     </main>
   );
