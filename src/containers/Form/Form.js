@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { storeUser } from '../../actions';
+import './Form.scss';
 
 export class Form extends Component {
   constructor() {
@@ -27,19 +28,21 @@ export class Form extends Component {
 
   render() {
     return (
-      <form>
-        <legend>Enter Gamertag</legend>
+      <form className="form_gamertag-form">
+        <legend>SEARCH HALO LEGACY</legend>
         <input
           type="text"
           name="gamertag"
           placeholder="Enter Xbox Gamertag"
           value={this.state.gamertag}
           onChange={event => this.handleChange(event)}
+          className="gamertag-input"
         />
         <input
           type="submit"
           value="SUBMIT"
           onClick={event => this.handleSubmit(event)}
+          className="gamertag-submit"
         />
       </form>
     );

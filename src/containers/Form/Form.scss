@@ -1,0 +1,9 @@
+@import '../../sass/mixins.scss';
+@import '../../sass/variables.scss';
+
+.form_gamertag-form {
+  @include set-dimensions(20vh, 100%);
+  @include thin-border(skyblue);
+  display: flex;
+  flex-direction: row;
+}
