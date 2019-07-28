@@ -6,7 +6,16 @@
   @include remove-spacing;
 }
 
+html {
+  overflow: hidden;
+  height: 100%;
+ }
+ body {
+  height: 100%;
+  overflow: auto;
+ }
+
 .App {
-  @include set-dimensions(100vh, 100%);
+  @include set-dimensions(auto, 100%);
   background-color: rgb(154, 190, 154);
 }
