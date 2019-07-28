@@ -15,12 +15,18 @@ export const getMaps = async () => {
   }
 };
 
-export const getSpartanImg = gamertag => {
+export const getSpartanImg = async gamertag => {
   const url = `https://www.haloapi.com/profile/h5/profiles/${gamertag}/spartan?size=512&crop=full`;
   const cors_proxy = 'https://cors-anywhere.herokuapp.com/';
   const options = { headers: { 'Ocp-Apim-Subscription-Key': apiKey } };
-
-  return fetch(cors_proxy + url, options)
-    .then(response => response.blob())
-    .then(blob => URL.createObjectURL(blob));
+  try {
+    const response = await fetch(cors_proxy + url, options);
+    if (!response.ok) {
+      throw new Error('Failed to retrieve Spartan image.');
+    }
+    const blob = await response.blob();
+    return URL.createObjectURL(blob);
+  } catch ({ message }) {
+    throw Error(message);
+  }
 };
