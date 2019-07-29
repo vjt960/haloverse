@@ -3,8 +3,11 @@
 
 .form_gamertag-form {
   @include set-dimensions(20vh, 100%);
-  @include thin-border(skyblue);
- position: relative;
+  background-image: linear-gradient( hsla(0, 0, 0, 1), hsla(0, 0, 0, 0.15) ), transparent;
+  border-style: inset;
+  border-left: none;
+  border-right: none;
+  position: relative;
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -17,19 +20,24 @@ input {
 
 legend {
   position: absolute;
-  top: 10%;
+  font-size: 2em;
+  top: 0;
 }
 
+
 .form_input-container {
-  @include set-dimensions(35px, 320px)
+  @include set-dimensions(40px, 30%);
+  display: flex;
 }
 
 .gamertag-input {
-  @include set-dimensions(95%, 250px);
+  @include set-dimensions(100%, 70%);
+  font-size: 1em;
+  padding: 0 0 0 10px;
 }
 
 .gamertag-submit {
-  @include set-dimensions(100%, 70px);
+  @include set-dimensions(100%, 25%);
     &:hover {
       cursor: pointer;
     }
