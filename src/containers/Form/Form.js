@@ -69,14 +69,20 @@ export class Form extends Component {
   }
 }
 
+const mapStateToProps = state => ({
+  error: state.error
+});
+
 const mapDispatchToProps = dispatch => ({
   storeUser: gamertag => dispatch(storeUser(gamertag)),
   storeSpartan: url => dispatch(storeSpartan(url)),
   storeEmblem: url => dispatch(storeEmblem(url)),
-  storeStats: stats => dispatch(storeStats(stats))
+  storeStats: stats => dispatch(storeStats(stats)),
+  hasErrored: message => dispatch(hasErrored(message)),
+  clearError: () => dispatch(clearError())
 });
 
 export default connect(
-  null,
+  mapStateToProps,
   mapDispatchToProps
 )(Form);
