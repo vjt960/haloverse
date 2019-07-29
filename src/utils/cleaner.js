@@ -21,9 +21,7 @@ export const formatStats = data => {
     deaths: info.TotalDeaths,
     wins: info.TotalGamesWon,
     losses: info.TotalGamesLost,
-    ties: info.TotalGamesTied,
     headshots: info.TotalHeadshots,
-    spartanKills: info.TotalSpartanKills,
     shots: info.TotalShotsFired,
     hits: info.TotalShotsLanded,
     damage: info.TotalWeaponDamage,
@@ -42,8 +40,8 @@ const formatTimeStamp = time => {
         seconds: 0
       }
     : {
-    hours: matches[6] === undefined ? 0 : matches[6],
-    minutes: matches[7] === undefined ? 0 : matches[7],
-    seconds: matches[8] === undefined ? 0 : matches[8]
-  };
+        hours: matches[6] === undefined ? 0 : matches[6],
+        minutes: matches[7] === undefined ? 0 : matches[7],
+        seconds: matches[8] === undefined ? 0 : matches[8]
+      };
 };
