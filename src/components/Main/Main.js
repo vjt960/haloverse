@@ -1,18 +1,16 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { Showcase } from '../../containers/Showcase/Showcase';
+import { Placeholder } from '../Placeholder';
 import Form from '../../containers/Form/Form';
 import Profile from '../../containers/Profile/Profile';
 
 export const Main = props => {
-  if (props.maps.length) {
-    console.log(props);
-  }
   return (
     <main>
       {props.maps.length && <Showcase maps={props.maps} />}
       <Form />
-      {props.stats && <Profile />}
+      {props.stats ? <Profile /> : <Placeholder />}
     </main>
   );
 };
