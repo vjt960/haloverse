@@ -15,7 +15,7 @@ export const Main = props => {
   );
 };
 
-const mapStateToProps = state => ({
+export const mapStateToProps = state => ({
   maps: state.maps,
   stats: state.stats
 });
