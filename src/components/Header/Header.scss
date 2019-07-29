@@ -5,24 +5,40 @@
 
 .header_main {
   @include set-dimensions(10vh, 100%);
-  @include thin-border(red);
-  font-family: 
-  wf_heroic-condensed-pro_medium,
-  Calibri,"Arial Narrow","Trebuchet MS",
-  Tahoma,Arial,sans-serif;
   font-weight: 600;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
+  background-image: linear-gradient( hsla(0, 0, 0, 1), hsla(0, 0, 0, 0.15) ), url('../../images/hex-dark.png');
+  position: absolute; 
+  opacity: 0.95;
   padding: 0 1%;
+  color: hsl(0, 0%, 100%)
 }
 
 .header_nav {
-  @include set-dimensions(auto, 30%);
+  @include set-dimensions(auto, auto);
   @include remove-spacing;
-  @include thin-border(blue);
   display: flex;
   flex-direction: row;
-  justify-content: space-evenly;
+  
+  a {
+    color: hsl(0, 0%, 100%);
+    background-color: transparent;
+    text-decoration: none;
+    padding: 10px 25px 10px 25px;
+
+
+    &:hover {
+      background-color: black;
+      transition: background-color .3s;
+    }
+
+    &.active {
+      color: hsla(0, 0%, 100%, 0.9);
+      background-color: hsla(0, 0, 0, 0.55);
+    }
+  }
+
 }
