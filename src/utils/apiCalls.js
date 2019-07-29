@@ -22,7 +22,7 @@ export const getSpartanImg = async gamertag => {
   try {
     const response = await fetch(cors_proxy + url, options);
     if (!response.ok) {
-      throw new Error('Failed to retrieve Spartan image.');
+      throw new Error('Error: Please enter an existing Xbox Gamertag.');
     }
     const blob = await response.blob();
     return URL.createObjectURL(blob);
@@ -38,7 +38,7 @@ export const getEmblem = async gamertag => {
   try {
     const response = await fetch(cors_proxy + url, options);
     if (!response.ok) {
-      throw new Error('Failed to retrieve Spartan image.');
+      throw new Error('Failed to retrieve Spartan emblem.');
     }
     const blob = await response.blob();
     return URL.createObjectURL(blob);
