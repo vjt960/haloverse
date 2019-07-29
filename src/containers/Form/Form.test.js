@@ -80,4 +80,63 @@ describe('Form', () => {
       expect(wrapper.state()).toEqual(expected);
     });
   });
+
+  describe('mapStateToProps', () => {
+    it('should return the object with the error state', () => {
+      const mockState = { error: 'mock error here' };
+      const expected = { error: 'mock error here' };
+      const mappedProps = mapStateToProps(mockState);
+      expect(mappedProps).toEqual(expected);
+    });
+  });
+
+  describe('mapDispatchToProps', () => {
+    let mockDispatch;
+
+    beforeEach(() => {
+      mockDispatch = jest.fn();
+    });
+
+    it('should call dispatch with a gamertag when storeUser is called', () => {
+      const actionToDispatch = storeUser('exampleTag');
+      const mappedProps = mapDispatchToProps(mockDispatch);
+      mappedProps.storeUser('exampleTag');
+      expect(mockDispatch).toHaveBeenCalledWith(actionToDispatch);
+    });
+
+    it('should call dispatch with a url when storeSpartan is called', () => {
+      const actionToDispatch = storeSpartan('exampleURL');
+      const mappedProps = mapDispatchToProps(mockDispatch);
+      mappedProps.storeSpartan('exampleURL');
+      expect(mockDispatch).toHaveBeenCalledWith(actionToDispatch);
+    });
+
+    it('should call dispatch with a url when storeEmblem is called', () => {
+      const actionToDispatch = storeEmblem('exampleURL');
+      const mappedProps = mapDispatchToProps(mockDispatch);
+      mappedProps.storeEmblem('exampleURL');
+      expect(mockDispatch).toHaveBeenCalledWith(actionToDispatch);
+    });
+
+    it('should call dispatch with stats when storeStats is called', () => {
+      const actionToDispatch = storeStats({ stats: 123 });
+      const mappedProps = mapDispatchToProps(mockDispatch);
+      mappedProps.storeStats({ stats: 123 });
+      expect(mockDispatch).toHaveBeenCalledWith(actionToDispatch);
+    });
+
+    it('should call dispatch with an error message when hasErrored is called', () => {
+      const actionToDispatch = hasErrored('example error message');
+      const mappedProps = mapDispatchToProps(mockDispatch);
+      mappedProps.hasErrored('example error message');
+      expect(mockDispatch).toHaveBeenCalledWith(actionToDispatch);
+    });
+
+    it('should call dispatch when clearError is called', () => {
+      const actionToDispatch = clearError();
+      const mappedProps = mapDispatchToProps(mockDispatch);
+      mappedProps.clearError();
+      expect(mockDispatch).toHaveBeenCalledWith(actionToDispatch);
+    });
+  });
 });
