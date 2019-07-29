@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { Showcase } from '../../containers/Showcase/Showcase';
-import { Placeholder } from '../Placeholder';
+import { Placeholder } from '../Placeholder/Placeholder';
 import Form from '../../containers/Form/Form';
 import Profile from '../../containers/Profile/Profile';
 
