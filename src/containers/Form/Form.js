@@ -83,11 +83,11 @@ export class Form extends Component {
   }
 }
 
-const mapStateToProps = state => ({
+export const mapStateToProps = state => ({
   error: state.error
 });
 
-const mapDispatchToProps = dispatch => ({
+export const mapDispatchToProps = dispatch => ({
   storeUser: gamertag => dispatch(storeUser(gamertag)),
   storeSpartan: url => dispatch(storeSpartan(url)),
   storeEmblem: url => dispatch(storeEmblem(url)),
