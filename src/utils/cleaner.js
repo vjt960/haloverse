@@ -35,7 +35,13 @@ export const formatStats = data => {
 const isoRegex = /(-)?P(?:([.,\d]+)Y)?(?:([.,\d]+)M)?(?:([.,\d]+)W)?(?:([.,\d]+)D)?T(?:([.,\d]+)H)?(?:([.,\d]+)M)?(?:([.,\d]+)S)?/;
 const formatTimeStamp = time => {
   const matches = time.match(isoRegex);
-  return {
+  return !matches
+    ? {
+        hours: 0,
+        minutes: 0,
+        seconds: 0
+      }
+    : {
     hours: matches[6] === undefined ? 0 : matches[6],
     minutes: matches[7] === undefined ? 0 : matches[7],
     seconds: matches[8] === undefined ? 0 : matches[8]
