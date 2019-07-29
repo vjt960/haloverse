@@ -1,7 +1,5 @@
 @import '../../sass/mixins.scss';
 @import '../../sass/variables.scss';
-@import url(https://fonts.googleapis.com/css?family=Lato:300,400,700,900);
-@font-face { font-family: 'simple-line-icons'; src: url('chrome-extension://mihdfbecejheednfigjpdacgeilhlmnf/assets/fonts/Simple-Line-Icons.ttf') format('truetype'); }
 
 .header_main {
   @include set-dimensions(10vh, 100%);
@@ -14,24 +12,31 @@
   position: absolute; 
   opacity: 0.95;
   padding: 0 1%;
-  color: hsl(0, 0%, 100%)
+  color: hsl(0, 0%, 100%);
+}
+
+h1 {
+  font-family: 'Orbitron', sans-serif;
 }
 
 .header_nav {
   @include set-dimensions(auto, auto);
   @include remove-spacing;
   display: flex;
-  flex-direction: row;
+  flex-direction: row;  
   
   a {
     color: hsl(0, 0%, 100%);
     background-color: transparent;
     text-decoration: none;
-    padding: 10px 25px 10px 25px;
+    padding: 10px 25px 10px 25px; 
+    font-family: 'Orbitron', sans-serif;
+
 
 
     &:hover {
-      background-color: black;
+      color: hsla(0, 0%, 100%, 0.9);
+      background-color: hsla(0, 0, 0, 0.55);
       transition: background-color .3s;
     }
 
