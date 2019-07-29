@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import './Showcase.scss';
 
 export class Showcase extends Component {
   constructor(props) {
@@ -25,7 +26,6 @@ export class Showcase extends Component {
       <section
         className="main_showcase"
         style={{
-          border: '1px solid magenta',
           height: '70vh',
           width: '100%',
           backgroundImage: 'url(' + this.state.mapURL + ')',

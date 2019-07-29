@@ -1,9 +1,11 @@
 @import '../../sass/mixins.scss';
 @import '../../sass/variables.scss';
+@import url('https://fonts.googleapis.com/css?family=Oswald&display=swap');
 
 * {
   box-sizing: border-box;
   @include remove-spacing;
+  font-family: 'Oswald', sans-serif;
 }
 
 html {
@@ -18,5 +20,6 @@ html {
 .App {
   @include set-dimensions(auto, 100%);
   background-image: linear-gradient( hsla(0, 0, 0, 0.15), hsla(0, 0, 0, 0.15) ), url('../../images/hex-dark.png');
+  background-attachment: fixed;
   background-repeat: repeat repeat;
 }

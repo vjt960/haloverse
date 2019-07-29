@@ -30,3 +30,12 @@ export const storeStats = stats => ({
   type: 'STORE_STATS',
   stats
 });
+
+export const hasErrored = errorMessage => ({
+  type: 'HAS_ERRORED',
+  errorMessage
+});
+
+export const clearError = () => ({
+  type: 'CLEAR_ERROR'
+});

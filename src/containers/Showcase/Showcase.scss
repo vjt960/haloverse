@@ -1,0 +1,16 @@
+.main_showcase {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: flex-start;
+  padding: 20px;
+  color: hsl(0, 0%, 100%);
+}
+
+.main_showcase--map-title {
+  font-size: 1.75em;
+}
+
+.main_showcase--map-description {
+  font-size: 1.35em;
+}

@@ -5,6 +5,7 @@ import { mapsReducer } from './mapsReducer';
 import { spartanReducer } from './spartanReducer';
 import { emblemReducer } from './emblemReducer';
 import { statsReducer } from './statsReducer';
+import { errorReducer } from './errorReducer';
 
 const rootReducer = combineReducers({
   user: userReducer,
@@ -12,7 +13,8 @@ const rootReducer = combineReducers({
   maps: mapsReducer,
   spartan: spartanReducer,
   emblem: emblemReducer,
-  stats: statsReducer
+  stats: statsReducer,
+  error: errorReducer
 });
 
 export default rootReducer;

@@ -1,28 +1,77 @@
 @import '../../sass/mixins.scss';
 @import '../../sass/variables.scss';
+@import url('https://fonts.googleapis.com/css?family=Orbitron&display=swap');
 
 .profile_container {
   @include set-dimensions(auto, 100%);
+  position: relative;
   display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: hsl(0, 0%, 100%);
+  background: linear-gradient(90deg, rgba(255,255,255,0) 0%, rgba(0,0,0,1) 80%, rgba(0,0,0,1) 100%);
+  color: hsl(0, 0%, 100%);
+}
+
+.profile_gamertag {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 2.25em;
+  margin: 10px;
 }
 
 .profile_spartan-img {
-  @include set-dimensions(370px, 270px);
-  @include thin-border(blue);
-  object-fit: cover;
+  @include set-dimensions(100%, 100%);
+  object-fit: contain;
 }
 
 .profile_service-card {
-  @include set-dimensions(370px, 100%);
-  @include thin-border(green);
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-evenly;
+  @include set-dimensions(auto, 100%);
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 10px;
+  padding: 10px;
 }
 
 .profile_emblem-img {
   @include set-dimensions(150px, 150px);
-  @include thin-border(red);
   object-fit: cover;
+}
+
+.statusMeter_table {
+  width: 100%;
+}
+
+.profile_stat-table {
+  @include set-dimensions(100%, 100%);
+  color: black;
+}
+
+tr {
+  text-align: center;
+}
+
+.table-k {
+  background-color: #3E98C7;
+  color: transparent;
+  margin-right: 5px;
+}
+
+.table-d {
+  background-color: hsl(0, 0%, 93%);
+  color: transparent;
+  margin-right: 5px;
+}
+
+.statusMeter_timer, 
+.kdr-percentage {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 2em;
+  letter-spacing: 3px;
+} 
+.statusMeter_playTime, 
+.kdr-label {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 1.25em;
+  text-align: center;
+  letter-spacing: 3px;
 }

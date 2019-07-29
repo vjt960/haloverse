@@ -4,7 +4,9 @@ import {
   storeUser,
   storeSpartan,
   storeEmblem,
-  storeStats
+  storeStats,
+  hasErrored,
+  clearError
 } from '../../actions';
 import { getSpartanImg, getEmblem, getStats } from '../../utils/apiCalls';
 import { formatStats } from '../../utils/cleaner';
@@ -14,7 +16,8 @@ export class Form extends Component {
   constructor() {
     super();
     this.state = {
-      gamertag: ''
+      gamertag: '',
+      error: ''
     };
   }
 
@@ -31,13 +34,24 @@ export class Form extends Component {
   };
 
   loadProfile = async gamertag => {
-    const { storeSpartan, storeEmblem, storeStats } = this.props;
-    const spartanURL = await getSpartanImg(gamertag);
-    const emblemURL = await getEmblem(gamertag);
-    const stats = await getStats(gamertag);
-    storeSpartan(spartanURL);
-    storeEmblem(emblemURL);
-    storeStats(formatStats(stats));
+    const {
+      storeSpartan,
+      storeEmblem,
+      storeStats,
+      hasErrored,
+      clearError
+    } = this.props;
+    try {
+      const spartanURL = await getSpartanImg(gamertag);
+      const emblemURL = await getEmblem(gamertag);
+      const stats = await getStats(gamertag);
+      storeSpartan(spartanURL);
+      storeEmblem(emblemURL);
+      storeStats(formatStats(stats));
+      clearError();
+    } catch (error) {
+      hasErrored(error.message);
+    }
   };
 
   clearInput = () => {
@@ -48,6 +62,7 @@ export class Form extends Component {
     return (
       <form className="form_gamertag-form">
         <legend>SEARCH HALO LEGACY</legend>
+        <p className="error-message">{this.props.error}</p>
         <div className="form_input-container">
           <input
             type="text"
@@ -69,14 +84,20 @@ export class Form extends Component {
   }
 }
 
+const mapStateToProps = state => ({
+  error: state.error
+});
+
 const mapDispatchToProps = dispatch => ({
   storeUser: gamertag => dispatch(storeUser(gamertag)),
   storeSpartan: url => dispatch(storeSpartan(url)),
   storeEmblem: url => dispatch(storeEmblem(url)),
-  storeStats: stats => dispatch(storeStats(stats))
+  storeStats: stats => dispatch(storeStats(stats)),
+  hasErrored: message => dispatch(hasErrored(message)),
+  clearError: () => dispatch(clearError())
 });
 
 export default connect(
-  null,
+  mapStateToProps,
   mapDispatchToProps
 )(Form);
