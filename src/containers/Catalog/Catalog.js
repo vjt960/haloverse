@@ -6,7 +6,7 @@ import './Catalog.scss';
 
 export const Catalog = props => {
   const enemyCards = props.enemies.map(enemy => {
-    return <Card key={Date.now} {...enemy} />;
+    return <Card key={`${enemy.name}-${Date.now()}`} {...enemy} />;
   });
 
   return <section className="catalog">{enemyCards}</section>;

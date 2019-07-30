@@ -44,7 +44,7 @@ export const mapDispatchToProps = dispatch => ({
 
 Halo.propTypes = {
   maps: PropTypes.array.isRequired,
-  stats: PropTypes.object.isRequired,
+  stats: PropTypes.string.isRequired,
   enemies: PropTypes.array
 };
 

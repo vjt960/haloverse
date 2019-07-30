@@ -5,21 +5,21 @@ import { Main, mapStateToProps } from './Main';
 describe('Main', () => {
   it('should match snapshot', () => {
     const wrapper = shallow(
-      <Main maps={[1, 2, 3]} stats={{ yes: 'no' }} userIsLoading={false} />
+      <Main maps={[1, 2, 3]} stats={'yee'} userIsLoading={false} />
     );
     expect(wrapper).toMatchSnapshot();
   });
 
   it('should match snapshot when conditionally rendering Showcase', () => {
     const altWrapper = shallow(
-      <Main maps={[1, 2, 3]} stats={{ yes: 'no' }} userIsLoading={false} />
+      <Main maps={[1, 2, 3]} stats={'yee'} userIsLoading={false} />
     );
     expect(altWrapper).toMatchSnapshot();
   });
 
   it('should match snapshot when conditionally rendering Placeholder', () => {
     const altWrapper = shallow(
-      <Main maps={[1, 2, 3]} userIsLoading={false} stats={{ yes: 'no' }} />
+      <Main maps={[1, 2, 3]} userIsLoading={false} stats={'yee'} />
     );
     expect(altWrapper).toMatchSnapshot();
   });

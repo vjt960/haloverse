@@ -7,7 +7,7 @@ describe('Halo', () => {
     const props = {
       storeEnemies: jest.fn(),
       maps: [1, 2, 3],
-      stats: { yes: 'no' },
+      stats: 'yeet',
       enemies: [1, 2, 3]
     };
     const wrapper = shallow(<Halo {...props} />, {

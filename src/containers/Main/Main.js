@@ -30,7 +30,7 @@ export const mapStateToProps = state => ({
 
 Main.propTypes = {
   maps: PropTypes.array.isRequired,
-  stats: PropTypes.object.isRequired,
+  stats: PropTypes.string.isRequired,
   userIsLoading: PropTypes.bool
 };
 
