@@ -84,4 +84,30 @@ describe('actions', () => {
     const result = actions.clearError();
     expect(result).toEqual(expectedAction);
   });
+
+  it('should have a type of STORE_ENEMIES', () => {
+    const mockEnemies = [1, 2, 3];
+    const expectedAction = {
+      type: 'STORE_ENEMIES',
+      enemies: mockEnemies
+    };
+    const result = actions.storeEnemies(mockEnemies);
+    expect(result).toEqual(expectedAction);
+  });
+
+  it('should have a type of USER_LOADING', () => {
+    const expectedAction = {
+      type: 'USER_LOADING'
+    };
+    const result = actions.userLoading();
+    expect(result).toEqual(expectedAction);
+  });
+
+  it('should have a type of USER_LOADED', () => {
+    const expectedAction = {
+      type: 'USER_LOADED'
+    };
+    const result = actions.userLoaded();
+    expect(result).toEqual(expectedAction);
+  });
 });
