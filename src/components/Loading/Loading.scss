@@ -1,0 +1,18 @@
+@import '../../sass/mixins.scss';
+@import '../../sass/variables.scss';
+
+.loading-showcase {
+  @include set-dimensions(70vh, 100%);
+  background-image: url('../../images/loading-hex.gif');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.loading-catalog {
+  @include set-dimensions(30vh, 100%);
+  background-image: url('../../images/loading-hex.gif');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
