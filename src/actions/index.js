@@ -39,3 +39,16 @@ export const hasErrored = errorMessage => ({
 export const clearError = () => ({
   type: 'CLEAR_ERROR'
 });
+
+export const storeEnemies = enemies => ({
+  type: 'STORE_ENEMIES',
+  enemies
+});
+
+export const userLoading = () => ({
+  type: 'USER_LOADING'
+});
+
+export const userLoaded = () => ({
+  type: 'USER_LOADED'
+});

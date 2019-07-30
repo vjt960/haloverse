@@ -1,11 +1,12 @@
-import React from 'react';
 import { connect } from 'react-redux';
+import React from 'react';
 import {
   CircularProgressbarWithChildren,
   buildStyles
 } from 'react-circular-progressbar';
 import 'react-circular-progressbar/dist/styles.css';
 import './Profile.scss';
+import PropTypes from 'prop-types';
 
 export class Profile extends React.Component {
   scrollToBottom = () => {
@@ -145,5 +146,12 @@ export const mapStateToProps = state => ({
   emblem: state.emblem,
   stats: state.stats
 });
+
+Profile.propTypes = {
+  user: PropTypes.string.isRequired,
+  spartan: PropTypes.string.isRequired,
+  emblem: PropTypes.string.isRequired,
+  stats: PropTypes.object.isRequired
+};
 
 export default connect(mapStateToProps)(Profile);

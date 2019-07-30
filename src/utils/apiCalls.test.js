@@ -1,4 +1,10 @@
-import { getMaps, getSpartanImg, getEmblem, getStats } from './apiCalls';
+import {
+  getMaps,
+  getSpartanImg,
+  getEmblem,
+  getStats,
+  getEnemies
+} from './apiCalls';
 import { apiKey } from './apiKey';
 
 describe('apiCalls', () => {
@@ -197,6 +203,55 @@ describe('apiCalls', () => {
       });
       expect(getStats(mockGamerTag)).rejects.toEqual(
         Error('Failed to fetch stat data.')
+      );
+    });
+  });
+
+  describe('getEnemies', () => {
+    let mockEnemies;
+
+    beforeEach(() => {
+      mockEnemies = [{ name: 'badGuy' }];
+      window.fetch = jest.fn().mockImplementation(() => {
+        return Promise.resolve({
+          ok: true,
+          json: () => Promise.resolve(mockEnemies)
+        });
+      });
+    });
+
+    it('should be called with the correct url', () => {
+      const url = 'https://www.haloapi.com/metadata/h5/metadata/enemies';
+      const options = { headers: { 'Ocp-Apim-Subscription-Key': apiKey } };
+      const expected = [url, options];
+      getEnemies();
+      expect(window.fetch).toHaveBeenCalledWith(...expected);
+    });
+
+    it('should return an array of maps (HAPPY)', async () => {
+      const result = await getEnemies();
+      expect(result).toEqual(mockEnemies);
+    });
+
+    it('should return an error if response is not ok (SAD)', () => {
+      window.fetch = jest.fn().mockImplementationOnce(() => {
+        return Promise.resolve({
+          ok: false
+        });
+      });
+      expect(getEnemies()).rejects.toEqual(
+        Error('Failed to retrieve Enemies data')
+      );
+    });
+
+    it('should return an error if status is not ok (SAD)', () => {
+      window.fetch = jest.fn().mockImplementationOnce(() => {
+        return Promise.reject({
+          message: 'Failed to retrieve Enemies data'
+        });
+      });
+      expect(getMaps()).rejects.toEqual(
+        Error('Failed to retrieve Enemies data')
       );
     });
   });

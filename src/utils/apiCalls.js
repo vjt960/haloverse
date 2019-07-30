@@ -61,3 +61,18 @@ export const getStats = async gamertag => {
     throw Error(message);
   }
 };
+
+export const getEnemies = async () => {
+  const url = 'https://www.haloapi.com/metadata/h5/metadata/enemies';
+  const options = { headers: { 'Ocp-Apim-Subscription-Key': apiKey } };
+  try {
+    const response = await fetch(url, options);
+    if (!response.ok) {
+      throw new Error(`Failed to retrieve Enemies data`);
+    }
+    const data = response.json();
+    return data;
+  } catch ({ message }) {
+    throw Error(message);
+  }
+};
