@@ -6,18 +6,18 @@ import './Catalog.scss';
 
 export const Catalog = props => {
   const enemyCards = props.enemies.map(enemy => {
-    return <Card key={enemy.name} {...enemy} />;
+    return <Card key={Date.now} {...enemy} />;
   });
 
   return <section className="catalog">{enemyCards}</section>;
 };
 
-const mapStateToProps = state => ({
+export const mapStateToProps = state => ({
   enemies: state.enemies
 });
 
 Catalog.propTypes = {
-  enemies: PropTypes.array.isRequied
+  enemies: PropTypes.array
 };
 
 export default connect(mapStateToProps)(Catalog);
