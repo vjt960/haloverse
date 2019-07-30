@@ -1,0 +1,31 @@
+@import '../../sass/mixins.scss';
+@import '../../sass/variables.scss';
+@import url('https://fonts.googleapis.com/css?family=Orbitron&display=swap');
+
+.card {
+  @include set-dimensions(300px, 100%);
+  @include thin-border(black);
+  font-family: 'Orbitron', sans-serif; 
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.card_header, 
+.card_footer {
+  position: absolute;
+  text-align: center; 
+  width: 100%;
+  background-color: rgba(7, 7, 7, 0.705);
+  color: white;
+}
+
+.card_footer {
+  bottom: 0;
+}
+
+.card_image {
+  object-fit: cover;
+  @include set-dimensions(100%, 100%);
+}
