@@ -139,7 +139,7 @@ export class Profile extends React.Component {
   }
 }
 
-const mapStateToProps = state => ({
+export const mapStateToProps = state => ({
   user: state.user,
   spartan: state.spartan,
   emblem: state.emblem,

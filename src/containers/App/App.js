@@ -34,11 +34,11 @@ export class App extends Component {
   }
 }
 
-const mapStateToProps = state => ({
+export const mapStateToProps = state => ({
   maps: state.maps
 });
 
-const mapDispatchToProps = dispatch => ({
+export const mapDispatchToProps = dispatch => ({
   startLoading: () => dispatch(startLoading()),
   endLoading: () => dispatch(endLoading()),
   storeMaps: maps => dispatch(storeMaps(maps))

@@ -44,7 +44,7 @@ export class Showcase extends Component {
   }
 }
 
-const mapStateToProps = state => ({
+export const mapStateToProps = state => ({
   isLoading: state.isLoading,
   maps: state.maps
 });
