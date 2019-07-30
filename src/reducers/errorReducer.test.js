@@ -7,7 +7,7 @@ describe('errorReducer', () => {
     expect(result).toEqual(expected);
   });
 
-  it('should update emblem state with HAS_ERRORED', () => {
+  it('should update error state with HAS_ERRORED', () => {
     const state = '';
     const mockError = 'Error: example text';
     const action = { type: 'HAS_ERRORED', errorMessage: mockError };
@@ -15,7 +15,7 @@ describe('errorReducer', () => {
     expect(result).toEqual(mockError);
   });
 
-  it('should update emblem state with CLEAR_ERROR', () => {
+  it('should update error state with CLEAR_ERROR', () => {
     const state = '';
     const action = { type: 'CLEAR_ERROR' };
     const result = errorReducer(state, action);
