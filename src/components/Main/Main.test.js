@@ -1,11 +1,21 @@
 import React from 'react';
-import { shallow } from 'enzyme';
+import { shallow, mount } from 'enzyme';
 import { Main, mapStateToProps } from './Main';
 
 describe('Main', () => {
   it('should match snapshot', () => {
     const wrapper = shallow(<Main maps={[1, 2, 3]} />);
     expect(wrapper).toMatchSnapshot();
+  });
+
+  it('should match snapshot when conditionally rendering Showcase', () => {
+    const altWrapper = shallow(<Main maps={{ length: false }} />);
+    expect(altWrapper).toMatchSnapshot();
+  });
+
+  it('should match snapshot when conditionally rendering Placeholder', () => {
+    const altWrapper = shallow(<Main maps={{ length: false }} stats={true} />);
+    expect(altWrapper).toMatchSnapshot();
   });
 });
 
