@@ -1,5 +1,6 @@
-import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
+import React, { Component } from 'react';
 import './Showcase.scss';
 
 export class Showcase extends Component {
@@ -48,5 +49,10 @@ export const mapStateToProps = state => ({
   isLoading: state.isLoading,
   maps: state.maps
 });
+
+Showcase.propTypes = {
+  isLoading: PropTypes.bool,
+  maps: PropTypes.array.isRequired
+};
 
 export default connect(mapStateToProps);

@@ -1,12 +1,13 @@
-import React, { Component } from 'react';
-import './Halo.scss';
-import { Showcase } from '../Showcase/Showcase';
 import { connect } from 'react-redux';
-import { Loading } from '../../components/Loading/Loading';
-import Catalog from '../Catalog/Catalog';
-import { getEnemies } from '../../utils/apiCalls';
+import PropTypes from 'prop-types';
+import React, { Component } from 'react';
 import { formatEnemies } from '../../utils/cleaner';
+import { getEnemies } from '../../utils/apiCalls';
+import { Loading } from '../../components/Loading/Loading';
+import { Showcase } from '../Showcase/Showcase';
 import { storeEnemies } from '../../actions';
+import Catalog from '../Catalog/Catalog';
+import './Halo.scss';
 
 export class Halo extends Component {
   componentDidMount = async () => {
@@ -40,6 +41,12 @@ export const mapStateToProps = state => ({
 export const mapDispatchToProps = dispatch => ({
   storeEnemies: enemies => dispatch(storeEnemies(enemies))
 });
+
+Halo.propTypes = {
+  maps: PropTypes.array.isRequired,
+  stats: PropTypes.object.isRequired,
+  enemies: PropTypes.array
+};
 
 export default connect(
   mapStateToProps,

@@ -1,5 +1,5 @@
-import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import React, { Component } from 'react';
 import {
   storeUser,
   storeSpartan,
@@ -13,6 +13,7 @@ import {
 import { getSpartanImg, getEmblem, getStats } from '../../utils/apiCalls';
 import { formatStats } from '../../utils/cleaner';
 import { Loading } from '../../components/Loading/Loading';
+import PropTypes from 'prop-types';
 import './Form.scss';
 
 export class Form extends Component {
@@ -108,6 +109,19 @@ export const mapDispatchToProps = dispatch => ({
   userLoading: () => dispatch(userLoading()),
   userLoaded: () => dispatch(userLoaded())
 });
+
+Form.propTypes = {
+  error: PropTypes.string.isRequired,
+  userIsLoading: PropTypes.bool.isRequired,
+  storeUser: PropTypes.func.isRequired,
+  storeSpartan: PropTypes.func,
+  storeEmblem: PropTypes.func,
+  storeStats: PropTypes.func,
+  hasErrored: PropTypes.func,
+  clearError: PropTypes.func,
+  userLoading: PropTypes.func,
+  userLoaded: PropTypes.func
+};
 
 export default connect(
   mapStateToProps,
