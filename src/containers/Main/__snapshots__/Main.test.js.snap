@@ -1,0 +1,7 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Main should match snapshot 1`] = `ShallowWrapper {}`;
+
+exports[`Main should match snapshot when conditionally rendering Placeholder 1`] = `ShallowWrapper {}`;
+
+exports[`Main should match snapshot when conditionally rendering Showcase 1`] = `ShallowWrapper {}`;
