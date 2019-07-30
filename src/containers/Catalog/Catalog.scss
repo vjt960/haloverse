@@ -1,0 +1,18 @@
+.catalog {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  height: 40vh;
+  grid-gap: 10px;
+  padding: 20px 20px 0 20px;
+  background-color: hsla(51, 100%, 20%, .2);
+
+  // display: grid;
+  // grid-template-columns: repeat(3, 1fr);
+  // grid-gap: 10px;
+  // padding: 20px 20px 0 20px;
+  // background-color: hsla(51, 100%, 20%, .2);
+  // color: white;
+  // height: 50vh;
+  // border: 1px solid black;
+  // overflow-y: scroll;
+}
