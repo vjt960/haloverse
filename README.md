@@ -7,6 +7,8 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 Haloverse Network is a simple stat-tracker for competitive Halo 5 or Halo Wars 2 Xbox gamers. The site allows a user to submit their Xbox gamertag to view their current Halo game-statistics. The site features navigation tabs for a user to access a variety of Halo meta-data and information. 
 
+This app uses the [Halo Public API](https://developer.haloapi.com/docs/services/).
+
 ##  Installation
 
 1.  Clone this repo to your local machine
