@@ -1,0 +1,20 @@
+@import '../../sass/mixins.scss';
+@import '../../sass/variables.scss'; 
+@import url('https://fonts.googleapis.com/css?family=Orbitron&display=swap'); 
+
+.halowars_main {
+  @include set-dimensions(100vh, 100%);
+  background-image: url('../../images/haloWars2.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.halowars_label {
+  font-size: 4em;
+  text-shadow: 3px 2px 3px rgba(255,255,255,.2);
+}
