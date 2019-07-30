@@ -7,7 +7,7 @@ describe('Showcase', () => {
     let wrapper;
 
     beforeEach(() => {
-      const props = { maps: [1, 2, 3] };
+      const props = { maps: [1, 2, 3], isLoading: false };
       wrapper = shallow(<Showcase {...props} />);
     });
 

@@ -16,18 +16,21 @@ describe('Form', () => {
 
     beforeEach(() => {
       props = {
-        storeSpartan,
-        storeEmblem,
-        storeStats,
-        hasErrored,
-        clearError
+        storeSpartan: jest.fn(),
+        storeEmblem: jest.fn(),
+        storeStats: jest.fn(),
+        hasErrored: jest.fn(),
+        clearError: jest.fn(),
+        error: '',
+        userIsLoading: false,
+        storeUser: jest.fn()
       };
       wrapper = shallow(<Form {...props} />);
       instance = wrapper.instance();
     });
 
     it('should match snapshot', () => {
-      const wrapper = shallow(<Form />);
+      const wrapper = shallow(<Form {...props} />);
       expect(wrapper).toMatchSnapshot();
     });
 
