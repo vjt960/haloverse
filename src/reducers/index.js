@@ -6,6 +6,8 @@ import { spartanReducer } from './spartanReducer';
 import { emblemReducer } from './emblemReducer';
 import { statsReducer } from './statsReducer';
 import { errorReducer } from './errorReducer';
+import { enemiesReducer } from './enemiesReducer';
+import { userLoadingReducer } from './userLoadingReducer';
 
 const rootReducer = combineReducers({
   user: userReducer,
@@ -14,7 +16,9 @@ const rootReducer = combineReducers({
   spartan: spartanReducer,
   emblem: emblemReducer,
   stats: statsReducer,
-  error: errorReducer
+  error: errorReducer,
+  enemies: enemiesReducer,
+  userIsLoading: userLoadingReducer
 });
 
 export default rootReducer;
