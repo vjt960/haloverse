@@ -3,10 +3,12 @@ import { Route, Switch } from 'react-router-dom';
 import React, { Component } from 'react';
 import { formatMapData } from '../../utils/cleaner';
 import { getMaps } from '../../utils/apiCalls';
-import Main from '../../components/Main/Main';
 import { NotFound } from '../../components/NotFound/NotFound';
 import { startLoading, endLoading, storeMaps } from '../../actions';
 import Header from '../../components/Header/Header';
+import Main from '../Main/Main';
+import Halo from '../Halo/Halo';
+import HaloWars from '../HaloWars/HaloWars';
 import './App.scss';
 
 export class App extends Component {
@@ -26,6 +28,8 @@ export class App extends Component {
         {this.props.maps ? (
           <Switch>
             <Route exact path="/" component={Main} />
+            <Route exact path="/halo_5" component={Halo} />
+            <Route exact path="/halo_wars_2" render={HaloWars} />
             <Route component={NotFound} />
           </Switch>
         ) : null}
