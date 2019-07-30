@@ -46,3 +46,11 @@ const formatTimeStamp = time => {
         seconds: matches[8] === undefined ? 0 : matches[8]
       };
 };
+
+export const formatEnemies = data => {
+  return data.map(enemy => ({
+    name: enemy.name,
+    faction: enemy.faction,
+    image: enemy.largeIconImageUrl
+  }));
+};
